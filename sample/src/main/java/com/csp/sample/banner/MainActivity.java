@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         // 自动轮播
         ViewPager.OnPageChangeListener listener02 = new SampleListener(txtAuto);
         BannerTimeOnPageChangeListener bannerListener = new BannerTimeOnPageChangeListener(vpgBannerAuto, listener02);
-        bannerListener.setIntervalTime(5000); // 自动轮播间隔时间
+        bannerListener.setIntervalTime(1000); // 自动轮播间隔时间
         bannerListener.startCarousel(); // 开始自动轮播
 
         // final SamplePagerAdapter adapter = new SamplePagerAdapter(context, resIds);

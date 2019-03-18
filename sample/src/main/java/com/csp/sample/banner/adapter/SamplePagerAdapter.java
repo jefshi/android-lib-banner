@@ -1,10 +1,11 @@
 package com.csp.sample.banner.adapter;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -21,24 +22,28 @@ import java.util.List;
 @SuppressWarnings("unused")
 public class SamplePagerAdapter extends BasePagerAdapter<Integer> {
 
-	public SamplePagerAdapter(Context context, List<Integer> object) {
-		super(context, object);
-	}
+    public SamplePagerAdapter(Context context, List<Integer> object) {
+        super(context, object);
+    }
 
-	@Override
-	protected View getView(ViewGroup container, int position) {
-		Integer id = getItem(position);
+    @Override
+    protected View getView(ViewGroup container, int position) {
+        Integer id = getItem(position);
 
-		FrameLayout view = new FrameLayout(getContext());
+        LinearLayout view = new LinearLayout(getContext());
+        view.setOrientation(LinearLayout.VERTICAL);
 
-		ImageView img = new ImageView(getContext());
-		img.setImageResource(id);
-		view.addView(img);
+        TextView txt = new TextView(getContext());
+        txt.setTextSize(30);
+        txt.setGravity(Gravity.CENTER_HORIZONTAL);
+        txt.setText("position = " + position);
+        view.addView(txt);
 
-		TextView txt = new TextView(getContext());
-		txt.setTextSize(60);
-		txt.setText("position = " + position);
-		view.addView(txt);
-		return view;
-	}
+        ImageView img = new ImageView(getContext());
+        img.setLayoutParams(new LinearLayout.LayoutParams(800, 800));
+        img.setImageResource(id);
+        view.addView(img);
+
+        return view;
+    }
 }
