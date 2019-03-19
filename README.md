@@ -49,6 +49,8 @@ vpgBannerAuto.setCurrentItem(1);
 ## Sample
 ![sample.gif](./img/sample.gif)
 
+上面那个 ViewPager 是轮播，但不自动，需手势滑动。底下那个 ViewPager 是自动轮播
+
 ## 原理
 
 自己看源码吧，就 3 个类，总共不到 200 行的代码。
